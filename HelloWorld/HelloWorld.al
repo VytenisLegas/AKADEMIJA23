@@ -5,12 +5,67 @@
 pageextension 50100 CustomerListExt extends "Customer List"
 {
     trigger OnOpenPage();
+    var
+        MyCodeunit7: Codeunit MyCodeunit7;
+        MyCodeunit8: Codeunit MyCodeunit8;
+        ProcessStatus: Boolean;
     begin
-        Bandymas1();
+        // Bandymas1();
+
+        // MyCodeunit7.Run();
+
+        // if MyCodeunit7.Run() then
+        //     Message('Sekmingai')
+        // else
+        //     Message('Nesekmingai - %1', GetLastErrorText());
+
+        //MyCodeunit7.MyProcedure();
+
+        // turetu buti - 0
+        //MyCodeunit8.Run();
+
+        //MyCodeunit8.SetGlobalValue(10);
+        // turetu buti - 10
+        //MyCodeunit8.Run();
 
 
+        // MyCodeunit8.SetGlobalValue(10);
+        // MyProcedure(MyCodeunit8);
+
+        // MyCodeunit8.Run();
+
+        // MyProcedure(MyCodeunit8);
+
+        // MyProcedure2();
+
+        // MyProcedure2();
+
+        MyCodeunit7.SetValue(30);
+        ProcessStatus := MyCodeunit7.Run();
+
+        if not ProcessStatus then
+            Message('return after error - %1', MyCodeunit7.GetValue());
 
     end;
+
+    var
+        gMyCodeunit8: Codeunit MyCodeunit8;
+
+    local procedure MyProcedure(MyCodeunit8: Codeunit MyCodeunit8)
+    begin
+        //Message('Get Value - %1', MyCodeunit8.GetGlobalValue());
+        MyCodeunit8.Run();
+
+        MyCodeunit8.SetGlobalValue(15);
+    end;
+
+    local procedure MyProcedure2()
+    begin
+        gMyCodeunit8.Run();
+
+        gMyCodeunit8.SetGlobalValue(20);
+    end;
+
 
     local procedure Bandymas1()
     var

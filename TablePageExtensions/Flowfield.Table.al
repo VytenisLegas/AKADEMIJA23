@@ -1,4 +1,4 @@
-table 50110 MyTable10
+table 50112 MyTable10
 {
     DataClassification = CustomerContent;
 

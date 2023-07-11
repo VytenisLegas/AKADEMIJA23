@@ -4,7 +4,7 @@ codeunit 50106 MyCodeunit7
     begin
         GlobalVariable := 10;
 
-        Error('Klaida');
+        //Error('Klaida');
 
         GlobalVariable := 20;
     end;
